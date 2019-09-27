@@ -1,0 +1,18 @@
+server:
+  port: 9070
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:9070/eureka/
+      
+spring:
+  application:
+    name: zuulweb
+zuul: 
+  routes:
+    api-1:
+      path: /app/**
+      serviceId: zuul1
+         
